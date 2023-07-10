@@ -1,9 +1,10 @@
 # hotpixels
 Scans a raw image and reports hot pixels
 
-Wrote this to support a DPRevived discussion.  Uses the LibRaw library to open a raw file, 
-then walks the image data and reports pixels containing a value above a threshold, default 15000.
-Reports the row-column coordinates of the pixel, and the channel (RGB) to which it belongs
+Wrote this to support a DPRevived discussion.  Uses the LibRaw library to open a raw file taken with
+the lenscap on, then walks the image data and reports pixels containing a value above a threshold, 
+default 15000.  Reports the row-column coordinates of the pixel, and the channel (RGB) to which it 
+belongs.
 
 ## Releases
 
@@ -31,8 +32,8 @@ hotpixel assessment, threshold = 15000
 raw image dimensions: 6064x4040
 hot pixel count: 0, maxval: 12502
 ```
-Hmmm, 12502 is a rather high value for a capture taken behind the lenscap, so let's adjust the 
-threshold and see what it is:
+Hmmm, 12502 is a rather high value for a capture taken behind the lenscap, but the dark frame
+was taken at ISO 1600. Let's adjust the threshold and see what it is:
 
 ```
 $ ./hotpixels DSZ_6223.NEF 12000
